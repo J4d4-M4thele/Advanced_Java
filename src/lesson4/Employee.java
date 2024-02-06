@@ -25,4 +25,26 @@ public class Employee {
     public double getSalary(){
         return this.salary;
     }
+
+    @Override
+    public String toString() {
+        return this.name + " earns R" + this.salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        boolean result = false;
+        if (o != null && (o instanceof Employee)) {
+            //making o an instance of Employee
+            Employee e = (Employee) o;
+            //checking each fields value
+            if ((e.empId == this.empId)
+                    && (e.name == this.name)
+                    && (e.ssn == this.ssn)
+                    && (e.salary == this.salary)) {
+                result = true;
+            }
+        }
+        return result;
+    }
 }
