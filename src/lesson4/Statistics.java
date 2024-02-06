@@ -1,6 +1,7 @@
 package lesson4;
 
 public class Statistics {
+    //varargs
     public static float avg(int ... nums) {
         int sum = 0;
         float result = 0;

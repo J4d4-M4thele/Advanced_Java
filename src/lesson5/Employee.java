@@ -1,6 +1,7 @@
-package lesson4;
+package lesson5;
 
 public class Employee {
+
     private int empId;
     private String name;
     private String ssn;
@@ -17,6 +18,21 @@ public class Employee {
         return "ID: " + empId + " Name: " + name;
     }
 
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSsn(String ssn) {
+        this.ssn = ssn;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
     public String getAllDetails() {
         return "ID: " + empId + " Name: " + name
                 + " SSN: " + ssn + " Salary: " + salary;

@@ -4,6 +4,8 @@ public final class PeerSingleton {
 
     private static final String[] hostNames = new String[5];
 
+    //static initializer
+    //runs code in order which it appears
     static {
         // Read from File
         hostNames[0] = "192.168.1.2";

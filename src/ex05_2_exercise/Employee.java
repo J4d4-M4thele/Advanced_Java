@@ -1,4 +1,4 @@
-package com.example;
+package ex05_2_exercise;
 
 public class Employee {
 

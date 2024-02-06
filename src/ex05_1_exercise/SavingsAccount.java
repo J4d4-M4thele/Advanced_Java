@@ -1,6 +1,6 @@
 
 
-package com.example;
+package ex05_1_exercise;
 
 
 public class SavingsAccount extends Account{
