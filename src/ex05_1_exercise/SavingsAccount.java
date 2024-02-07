@@ -10,11 +10,6 @@ public class SavingsAccount extends Account{
         super(balance);
     }
 
-    
-    
- 
-    
-
     @Override
     public boolean withdraw(double amount) {
         if(amount <= balance ) {
