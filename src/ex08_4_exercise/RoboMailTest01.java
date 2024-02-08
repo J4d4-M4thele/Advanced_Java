@@ -16,9 +16,9 @@ public class RoboMailTest01 {
     System.out.println("\n=== Male Eng Under 65");
     
     // Mail mail, Eng employees < 65
-    Predicate<Employee> over50 = p -> p.getGender().equals(Gender.MALE) && p.getDept().equals("Eng");
+    Predicate<Employee> under65Eng = p -> p.getGender().equals(Gender.MALE) && p.getDept().equals("Eng") && p.getAge() < 65;
     pl.stream()
-            .filter(over50)
+            .filter(under65Eng)
             .forEach(p -> robo.roboMail(p));
 
   }
