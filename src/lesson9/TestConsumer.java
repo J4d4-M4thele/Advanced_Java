@@ -8,7 +8,7 @@ public class TestConsumer {
         List<SalesTxn> tList = SalesTxn.createTxnList();
         Consumer<SalesTxn> buyerConsumer = t ->
         System.out.println("Id: " + t.getTxnId()
-        + "Buyer: " + t.getBuyerName());
+        + " Buyer: " + t.getBuyerName());
 
         System.out.println("\n==Buyers Lambda==");
         tList.stream()

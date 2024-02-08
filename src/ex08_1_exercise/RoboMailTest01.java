@@ -3,10 +3,6 @@ package ex08_1_exercise;
 import java.util.List;
 import java.util.function.Predicate;
 
-/**
- * @author Oracle
- * Reuse lambda expressions
- */
 public class RoboMailTest01 {
   
   public static void main(String[] args) {
@@ -23,11 +19,23 @@ public class RoboMailTest01 {
     
     System.out.println("\n==== RoboMail 01");
     System.out.println("\n=== Sales Execs ===");
-    robo.mail(pl, salesExecutives); // Convert to stream and forEach
-    robo.text(pl, salesExecutives); // Convert to stream and forEach
+    //mail stream
+    pl.stream()
+            .filter(salesExecutives)
+            .forEach(p -> robo.roboMail(p));
+    //text stream
+    pl.stream()
+            .filter(salesExecutives)
+            .forEach(p -> robo.roboText(p));
     
     System.out.println("\n=== All Sales ===");
-    robo.mail(pl, salesEmployeesOver50); // Convert to stream and forEach
-    robo.text(pl, salesEmployeesOver50); // Convert to stream and forEach   
+    //mail stream
+    pl.stream()
+            .filter(salesEmployeesOver50)
+            .forEach(p -> robo.roboMail(p));
+    //text stream
+    pl.stream()
+            .filter(salesEmployeesOver50)
+            .forEach(p -> robo.roboText(p));
   }
 }

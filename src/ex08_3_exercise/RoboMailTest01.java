@@ -1,6 +1,7 @@
 package ex08_3_exercise;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author Oracle
@@ -15,8 +16,11 @@ public class RoboMailTest01 {
         
     System.out.println("\n==== RoboMail 01");    
     System.out.println("\n=== All Sales 50+");
-    
-    // Print sales employees 50+
+
+    Predicate<Employee> over50 = p -> p.getAge() >= 50 && p.getDept().equals("Sales");
+    pl.stream()
+            .filter(over50)
+            .forEach(p -> robo.roboMail(p));
 
   }
 }

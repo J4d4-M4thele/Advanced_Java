@@ -1,10 +1,5 @@
 package ex08_2_exercise;
 
-/**
- *
- * @author MikeW
- * 
- */
 public class RoboMail01 {
   
     
