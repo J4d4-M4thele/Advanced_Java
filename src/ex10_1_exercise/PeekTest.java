@@ -20,7 +20,12 @@ public class PeekTest {
     // Write report using peek
     System.out.println("=== Widget Pro Sales Tax in CA ===");
 
-        
-        
+        tList.stream()
+                .filter(t -> t.getState().equals(State.CA))
+                .filter(t-> t.getProduct().equals("Widget Pro"))
+                .peek(taxReport)
+                .map(t -> t.getTransactionTotal() * TaxRate.byState(t.getState()))
+                .forEach(amt -> System.out.printf("\nTxn tax: $%,9.2f%n", amt));
+
     }
 }

@@ -1,6 +1,7 @@
 package ex10_2_exercise;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 /**
@@ -29,19 +30,30 @@ public class LazyTest {
         
         // Print out list normally
         System.out.println("=== Widget Pro Quantity in CO ===");
-
+        tList.stream()
+                .forEach(t -> t.printSummary());
         
         
         // Print out all the steps in the list
         System.out.println("\n=== Widget Pro Quantity in CO ===");
-
+        tList.stream()
+                .filter(t -> t.getState().equals(State.CO))
+                .filter(t-> t.getProduct().equals("Widget Pro"))
+                .forEach(quantReport);
             
         
         // Update code to handle return value of a findFirst
         System.out.println("\n=== Widget Pro Quantity in CO (FindFirst)===");
+        Optional<SalesTxn> frst =tList.stream()
+                .peek(streamStart)
+                .filter(t -> t.getState().equals(State.CO))
+                .peek(stateSearch)
+                .filter(t-> t.getProduct().equals("Widget Pro"))
+                .peek(productSearch)
+                .findFirst();
+        if(frst.isPresent()) {
+            quantReport.accept(frst.get());
+        }
 
-        
-        
-        
     }
 }
