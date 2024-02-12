@@ -1,5 +1,6 @@
 package ex10_5_exercise;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -19,14 +20,26 @@ public class SortTest {
         
         // Print out PriceCo Transactions
         System.out.println("=== PriceCo Transactions ===");
-        
+        tList.stream()
+                .filter(t -> t.getBuyerName().equals("PriceCo"))
+                //prints in ascending order
+                .sorted(Comparator.comparing(SalesTxn::getTransactionTotal))
+                .forEach(transReport);
         
         System.out.println("\n=== PriceCo Transactions Reversed ===");
-                 
+        tList.stream()
+                .filter(t -> t.getBuyerName().equals("PriceCo"))
+                //prints in descending order
+                .sorted(Comparator.comparing(SalesTxn::getTransactionTotal).reversed())
+                .forEach(transReport);
         
         // Sort by Buyer, SalesPerson, Transaction Total
         System.out.println("\n=== Triple Sort Transactions ===");
-
-        
+        tList.stream()
+                //prints in ascending order
+                .sorted(Comparator.comparing(SalesTxn::getBuyerName))
+                .sorted(Comparator.comparing(SalesTxn::getSalesPerson))
+                .sorted(Comparator.comparing(SalesTxn::getTransactionTotal))
+                .forEach(transReport);
     }
 }

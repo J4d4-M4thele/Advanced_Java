@@ -1,6 +1,8 @@
 package ex10_7_exercise;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -14,7 +16,11 @@ public class JoinTest {
         
         // Print out a sorted list of unique buyer names
         System.out.println("=== Sorted Buyer's List ===");
-        String result = ""; //Replace with your stream
+        String result = tList.stream()
+                .map(t -> t.getBuyerName())
+                .distinct()
+                .sorted()
+                .collect(Collectors.joining(", ")); //Replace with your stream
         
         System.out.println("Buyer list: " + result);
             
