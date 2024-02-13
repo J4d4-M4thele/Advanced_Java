@@ -1,8 +1,8 @@
 package ex11_2_exercise;
 
 public class EmployeeTest {
-    
-    public static void main(String[] args)  {
+
+    public static void main(String[] args) throws InvalidOperationException {
         Employee e1 = new Employee(0, "bob", "builder", 1250.50f);
         EmployeeImpl emp = new EmployeeImpl();
         emp.add(e1);
@@ -14,12 +14,18 @@ public class EmployeeTest {
         for (Employee employee : allEmps) {
             System.out.println(employee + "\n");
         }
-        
-      //emp.delete(7);
-       
-        
-                }          
-    
-    
-    
+
+        Employee e = emp.findById(5);
+        if (e != null) {
+            System.out.println(emp + "\n");
+        } else {
+            System.out.println("\n\nEmployee not found");
+        }
+
+        emp.delete(7);
+
+
     }
+
+
+}
