@@ -17,11 +17,14 @@ public class ByteStreamCopyTest {
          // Example use of InputStream methods
          try (FileInputStream fis = new FileInputStream ("C:\\Users\\Jada\\YourJavaDirectory\\Input.txt");
               //automatically creates file if doesn't exist
-              FileOutputStream fos = new FileOutputStream ("C:\\Users\\Jada\\YourJavaDirectory\\Output.txt")) {
+              FileOutputStream fos = new FileOutputStream ("C:\\Users\\Jada\\YourJavaDirectory\\ByteOutput.txt")) {
              System.out.println ("Bytes available: " + fis.available());
             int count = 0; int read = 0;
+            //once the copying has ended while loop ends
+
             while ((read = fis.read(b)) != -1) {
                  fos.write(b);
+                 //counts no. of characters
                 count += read;
              }
              System.out.println ("Wrote: " + count);
