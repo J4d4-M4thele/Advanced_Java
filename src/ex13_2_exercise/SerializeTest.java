@@ -1,14 +1,13 @@
 package ex13_2_exercise;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.text.NumberFormat;
+import java.util.List;
 
 public class SerializeTest {
 
     public static void main(String[] args) {
-        String directory = "/home/oracle/labs/13-IO_Fundamentals/practices/practice2/SerializeShoppingCart" ;
+        String directory = "C:\\Users\\Jada\\YourJavaDirectory" ;
         String cartId = null;
         ShoppingCart cart = null;
         System.out.println("Enter the ID of the cart file to create and serialize or q exit.");
@@ -35,6 +34,21 @@ public class SerializeTest {
                 + NumberFormat.getCurrencyInstance().format(cart.getCartTotal()));
 
         String cartFile = directory + "cart" + cart.getCartID() + ".ser";
-        // Your code goes here....
+        try(FileOutputStream fos = new FileOutputStream(cartFile);
+            ObjectOutputStream o = new ObjectOutputStream(fos)){
+            o.writeObject(cart);
+        }catch(IOException e){
+            System.out.println ("Exception serializing " + cartFile + ": " + e);
+            System.exit (-1);
+        }
+
+        System.out.println("Successfully serialized shopping cart with ID: " + cart.getCartID());
+
+        System.out.println("Shopping cart contains: ");
+        List<Item> cartContents = cart.getItems();
+        for(Item item: cartContents) {
+            System.out.println(item);
+        }
+        System.out.println("Shopping cart total: " + NumberFormat.getCurrencyInstance().format(cart.getCartTotal()));
     }
 }

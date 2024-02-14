@@ -42,7 +42,7 @@ public class DiskUsage {
     static final long K = 1024;
 
     static void printFileStore(FileStore store) throws IOException {
-        //searches forand displays metadata
+        //searches for and displays metadata
         long total = store.getTotalSpace() / K;
         long used = (store.getTotalSpace() - store.getUnallocatedSpace()) / K;
         long avail = store.getUsableSpace() / K;
