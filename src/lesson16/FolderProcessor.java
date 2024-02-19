@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.RecursiveTask;
 public class FolderProcessor extends RecursiveTask<List<String>> {
+    //recursion is when something is calling itself within its own body (for examples functions)
     private static final long serialVersionUID = 1L;
     //This attribute will store the full path of the folder this task is going to process.
     private final String path;

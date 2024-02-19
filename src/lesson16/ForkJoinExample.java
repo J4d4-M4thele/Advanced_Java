@@ -9,7 +9,7 @@ public class ForkJoinExample {
         ForkJoinPool pool = new ForkJoinPool();
         FolderProcessor system = new FolderProcessor("C:\\Windows", "log");
         FolderProcessor apps = new FolderProcessor("C:\\Program Files", "log");
-        FolderProcessor documents = new FolderProcessor("C:\\Documents And Settings", "log");
+        FolderProcessor documents = new FolderProcessor("C:\\Users\\Jada\\YourJavaDirectory", "txt");
         //Execute the three tasks in the pool using the execute() method.
         pool.execute(system);
         pool.execute(apps);

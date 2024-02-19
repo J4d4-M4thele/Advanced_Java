@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GeeksForGeeks/GeeksForGeeks.iml" filepath="$PROJECT_DIR$/GeeksForGeeks/GeeksForGeeks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../D84838GC10_labs/D84838GC10_labs/labs/16-ForkJoin/GeeksForGeeks/GeeksForGeeks.iml" filepath="$PROJECT_DIR$/../D84838GC10_labs/D84838GC10_labs/labs/16-ForkJoin/GeeksForGeeks/GeeksForGeeks.iml" />
       <module fileurl="file://$PROJECT_DIR$/exercises.iml" filepath="$PROJECT_DIR$/exercises.iml" />
     </modules>
   </component>

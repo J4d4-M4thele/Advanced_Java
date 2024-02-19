@@ -14,7 +14,7 @@ public class CountRunnable implements Runnable{
 
   public void run(){ 
     // Count with for loop
-    for(int i = 1; i <= count; i++) {
+    for(int  i = 1; i <= count; i++) {
       System.out.println("Thread " + threadName + ": " + i);
     }
   }
