@@ -2,7 +2,7 @@ package lesson17;
 
 import java.util.List;
 
-public class OldStyleLoop {
+public class OldStyleLoopTest {
     public static void main(String[] args) {
 
         List<Employee> eList = Employee.createShortList();
