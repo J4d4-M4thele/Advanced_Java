@@ -15,7 +15,7 @@ public class DetermineNotTest {
         Optional<Employee> e2 = eList.stream()
                 .filter(e -> e.getRole().equals(Role.EXECUTIVE))
                 .parallel().findAny();
-
+        //could possibly be false as parallels don't operate sequentially
         System.out.println("The same: " +
                 e1.get().getEmail().equals(e2.get().getEmail()));
 

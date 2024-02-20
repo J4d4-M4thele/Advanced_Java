@@ -1,6 +1,8 @@
 package ex17_1_exercise;
 
 import java.util.List;
+import java.util.stream.DoubleStream;
+import java.util.stream.Stream;
 
 /**
  *
@@ -14,12 +16,15 @@ public class CalcTest {
         
         // Print out Transaction Totals
         System.out.println("=== Transactions Totals ===");
+
+        Stream<SalesTxn> s1 = tList.stream();
+        Stream<SalesTxn> s2 = s1
+                .filter(t -> t.getBuyerName().equals("Radio Hut"));
+//                .peek(t -> t.printSummary());
+        DoubleStream s3 = s2.mapToDouble(t -> t.getTransactionTotal());
         
-        // Put code here
         
-        
-        double t1 = 0; // Put result here
-        
+        double t1 = s3.sum(); // Put result here
         System.out.printf("Radio Hut Total: $%,9.2f%n", t1);
         
     }

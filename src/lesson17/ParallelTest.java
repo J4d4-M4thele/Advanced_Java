@@ -7,6 +7,9 @@ public class ParallelTest {
 
         List<Employee> eList = Employee.createShortList();
 
+        //parallel isn't always faster
+        //splits tasks up, executes themand then comes together to display results
+        System.out.println("\nPARALLEL STREAM");
         double result = eList.parallelStream()
                 .filter(e -> e.getState().equals("CO"))
                 .filter(e -> e.getRole().equals(Role.EXECUTIVE))
@@ -16,9 +19,10 @@ public class ParallelTest {
 
         System.out.printf("Total CO Executive Pay: $%,9.2f %n", result);
 
-        System.out.println("\n");
+        //System.out.println("\n");
 
         // Call parallel from pipeline
+        System.out.println("\nCALLING PARALLEL FROM PIPELINE");
         result = eList.stream()
                 .filter(e -> e.getState().equals("CO"))
                 .filter(e -> e.getRole().equals(Role.EXECUTIVE))
@@ -29,9 +33,10 @@ public class ParallelTest {
 
         System.out.printf("Total CO Executive Pay: $%,9.2f %n", result);
 
-        System.out.println("\n");
+        //System.out.println("\n");
 
         // Call sequential from pipeline
+        System.out.println("\nCALLING SEQUENTIAL FROM PIPELINE");
         result = eList.stream()
                 .filter(e -> e.getState().equals("CO"))
                 .filter(e -> e.getRole().equals(Role.EXECUTIVE))

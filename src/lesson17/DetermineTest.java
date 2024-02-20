@@ -16,7 +16,7 @@ public class DetermineTest {
                 .filter(e -> e.getState().equals("CO"))
                 .mapToDouble(Employee::getSalary)
                 .parallel().sum();
-
+        //the sum of both streams is the same
         System.out.println("The same: " + (r1 == r2));
     }
 }
