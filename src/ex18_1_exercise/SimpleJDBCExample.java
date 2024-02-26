@@ -8,12 +8,10 @@ public class SimpleJDBCExample {
     public static void main(String[] args) {
         // Create the "url"
         // assume database server is running on the localhost
-        String url = "jdbc:derby://localhost:1527/EmployeeDB";
-        String username = "tiger";
-        String password = "scott";
-
-        // Create a simple query
-        String query = "select * from EMPLOYEE";
+        String url = "jdbc:postgresql://localhost:5432/adv_java";
+        String username = "postgres";
+        String password = "Jada2004";
+        String query = "SELECT * FROM public.\"Employee\"";
 
         // A try-with-resources example
         // Connection and Statement implement java.lan.AutoCloseable
